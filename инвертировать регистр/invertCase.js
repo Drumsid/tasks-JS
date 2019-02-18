@@ -16,12 +16,14 @@
 // 'BAR'.toLowerCase(); // 'bar';
 // 'b'.toLowerCase();   // 'b';
 
+
+//my decision--------------------------------------------------
 const invertCase = (str) => {
     let z = "";
-    for (let i = 0; i < str.lenth; i++) {
-        if (str[i].toUpperCase()) {
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i].toUpperCase()) {
             z = z + str[i].toLowerCase();
-        } else if (str[i].toLowerCase()) {
+        } else if (str[i] === str[i].toLowerCase()) {
             z = z + str[i].toUpperCase();
         } else {
             z = z + str[i];
@@ -33,7 +35,9 @@ const invertCase = (str) => {
 //export default invertCase;
 
 console.log(invertCase("Ghost, fisH"));
+//my decision end ---------------------------------------------------
 
+//my testing start-------------------------------------------------------
 let string = "Ghost, fisH";
 let z = "";
 
@@ -50,3 +54,21 @@ for (let i = 0; i < string.length; i++) {
     }
 }
 console.log(z);
+//my testing end---------------------------------------
+
+//teacher decision start -------------------------------------
+
+const invertCase = (str) => {
+    let result = '';
+    for (let i = 0; i < str.length; i += 1) {
+      const upper = str[i] === str[i].toUpperCase();
+      result += upper ? str[i].toLowerCase() : str[i].toUpperCase();
+    }
+  
+    return result;
+  };
+  
+  export default invertCase;
+  // END
+
+//teacher decision end ------------------------------------

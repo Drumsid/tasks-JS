@@ -1,16 +1,17 @@
-let string = "Ghost, fisH";
-let z = "";
-
-for (let i = 0; i < string.length; i++) {
-   
-     if (string[i].toUpperCase()) {
-         z += string[i].toLowerCase();
-     }
-     else if (string[i].toLowerCase()) {
-         z += string[i].toUpperCase();
-    } 
-     else {
-        z += string[i];
+const invertCase = (str) => {
+    let z = "";
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i].toUpperCase()) {
+            z = z + str[i].toLowerCase();
+        } else if (str[i] === str[i].toLowerCase()) {
+            z = z + str[i].toUpperCase();
+        } else {
+            z = z + str[i];
+        }
     }
-}
-console.log(z);
+    return z;
+};
+
+//export default invertCase;
+
+console.log(invertCase("Ghost, fisH"));
